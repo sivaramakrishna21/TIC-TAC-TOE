@@ -20,7 +20,6 @@ main()
 		}
 		printf("\n");
 	}
-//	print();
 	printf("\n\n");
 	int f=0;
 	printf("enter your first position");
@@ -117,10 +116,11 @@ second(int d[3][3])
 	if(f3==0){
 		f5=0;
 		check(d);
-		//printf("%d\n",f2);
 		if(f2==0)
 		{
+			printf("hi");
 			exchange(b,d);
+			printf("\n\n");
 			printf("\n\n");
 			if(dup[0][0]=='X'&&dup[1][2]=='X'&&dup[0][1]=='_'&&dup[0][2]=='_')
 			{
@@ -153,8 +153,13 @@ second(int d[3][3])
 				dup[0][2]='O';
 				exchangeback(dup,d);
 			}
-			else
+			else if(dup[0][1]=='X'&&dup[1][0]=='X')
 			{
+				dup[0][0]='O';
+				exchangeback(dup,d);
+			}
+			else{
+				printf("done");
 				int t=0;
 				for(i=0;i<3;i++)
 				{
@@ -176,8 +181,6 @@ second(int d[3][3])
 	print();
 	printf("\n\n");
 	third(d);
-	
-
 }
 third(int d[3][3])
 {
@@ -208,8 +211,6 @@ third(int d[3][3])
 		print();
 		f5=1;
 		check(d);
-		//result();
-	//	printf("%d",f3);
 		if(f3==0)
 		{
 			f5=0;
@@ -406,6 +407,5 @@ result()
 				printf("---------------------------------------------------COMPUTER WON--------------------------------------------------\n---------------------------------------------------THE END--------------------------------------------------\n");
 			f6=1;
 	}
-	
-	
+		
 }
